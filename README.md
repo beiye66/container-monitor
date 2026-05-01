@@ -40,7 +40,7 @@
 
 | 名称 | 型号 / 规格 | 数量 |
 |---|---|---|
-| 主控板 | STM32F103C8T6（Blue Pill） | 1 |
+| 主控板 | STM32F103C8T6 最小系统板 | 1 |
 | 烧录器 | ST-Link V2 | 1 |
 | IMU 传感器 | MPU6050 模块 | 1 |
 | 环境传感器 | BME680 模块 | 1 |
@@ -71,27 +71,27 @@
 
 ## 硬件连接
 
-### ST-Link → Blue Pill（烧录/调试）
+### ST-Link → STM32F1（烧录/调试）
 
-| ST-Link | Blue Pill |
+| ST-Link | STM32F1 |
 |---|---|
 | SWDIO | PA13 |
 | SWCLK | PA14 |
 | GND | GND |
 | 3.3V | 3V3 |
 
-### USB-TTL → Blue Pill（串口数据）
+### USB-TTL → STM32F1（串口数据）
 
-| USB-TTL | Blue Pill |
+| USB-TTL | STM32F1 |
 |---|---|
 | RX | PA9 |
 | GND | GND |
 
 > 只需接 RX 和 GND，不需要 TX。
 
-### MPU6050 → Blue Pill
+### MPU6050 → STM32F1
 
-| MPU6050 | Blue Pill |
+| MPU6050 | STM32F1 |
 |---|---|
 | VCC | 3V3 |
 | GND | GND |
@@ -99,9 +99,9 @@
 | SDA | PB7 |
 | AD0 | 不接（默认 GND，I2C 地址 0x68）|
 
-### BME680 → Blue Pill
+### BME680 → STM32F1
 
-| BME680 | Blue Pill |
+| BME680 | STM32F1 |
 |---|---|
 | VCC | 3V3 |
 | GND | GND |
@@ -588,7 +588,7 @@ newlib-nano 默认裁剪了浮点 `printf`。在 CubeIDE 的 **Project → Prope
 
 **Q：VOFA+ 串口助手显示空白**
 
-两个可能：① COM 口被 CubeIDE 的调试进程占用，在任务管理器结束 `ST-LINK_GDB_server.exe` 后重连；② USB-TTL 的 RX 引脚未接到 Blue Pill 的 PA9。可以用 PowerShell 或 Putty 交叉验证数据是否到达 PC。
+两个可能：① COM 口被 CubeIDE 的调试进程占用，在任务管理器结束 `ST-LINK_GDB_server.exe` 后重连；② USB-TTL 的 RX 引脚未接到 STM32F1 的 PA9。可以用 PowerShell 或 Putty 交叉验证数据是否到达 PC。
 
 **Q：IMU 数据的 az 不在 4096 左右**
 
