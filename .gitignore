@@ -1,0 +1,14 @@
+data/
+.venv/
+container-monitor-fw/Debug/
+container-monitor-fw/.settings/
+container-monitor-fw/*.launch
+*.o
+*.d
+*.elf
+*.map
+*.list
+*.su
+*.cyclo
+__pycache__/
+*.pyc
