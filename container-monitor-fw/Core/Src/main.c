@@ -17,6 +17,7 @@
   */
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
+/* Test PR for AI code review */
 #include "main.h"
 #include "i2c.h"
 #include "tim.h"
